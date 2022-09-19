@@ -195,6 +195,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        //CollectiveHTML for use in forms 
+        Collective\Html\HtmlServiceProvider::class
+
     ],
 
     /*
@@ -209,6 +212,10 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
+
+        "Form" => Collective\Html\FormFacade::class,
+        "Html" => Collective\Html\HtmlFacade::class,
+
         // 'ExampleClass' => App\Example\ExampleClass::class,
     ])->toArray(),
 

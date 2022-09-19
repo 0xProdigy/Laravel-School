@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\Admin\HomeController;
 
 
 Route::get('/index', [LoginController::class, "index"])->middleware("can:student.dashboard", "auth")->name("student.dashboard");

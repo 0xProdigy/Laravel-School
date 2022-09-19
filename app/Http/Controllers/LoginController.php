@@ -32,13 +32,12 @@ class LoginController extends Controller
 
     public function detectUser()
     {
-
         $user = User::find(Auth::user()->id);
 
         if ($user->hasRole("admin")) {
             return redirect()->route("admin.home");
         } else {
-            return $this->index();
+            return redirect()->route("student.dashboard");
         }
     }
 

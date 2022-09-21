@@ -52,16 +52,16 @@
                     </a>
                     <ul class="list-unstyled full-box">
                         <li>
-                            <a href="period.html"><i class="zmdi zmdi-timer zmdi-hc-fw"></i> Period</a>
+                            <a href="{{route("admin.periods.index")}}"><i class="zmdi zmdi-timer zmdi-hc-fw"></i> Period</a>
                         </li>
                         <li>
-                            <a href="subject.html"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Subject</a>
+                            <a href="{{route("admin.subjects.index")}}"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Subject</a>
                         </li>
                         <li>
-                            <a href="section.html"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i> Section</a>
+                            <a href="{{route("admin.sections.index")}}"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i> Section</a>
                         </li>
                         <li>
-                            <a href="salon.html"><i class="zmdi zmdi-font zmdi-hc-fw"></i> Salon</a>
+                            <a href="{{route("admin.salon.index")}}"><i class="zmdi zmdi-font zmdi-hc-fw"></i> Salon</a>
                         </li>
                     </ul>
                 </li>

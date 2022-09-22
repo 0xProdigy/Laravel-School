@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Admin\Subject;
+use App\Models\Subject;
 use Illuminate\Http\Request;
 
 class SubjectController extends Controller
@@ -43,7 +43,7 @@ class SubjectController extends Controller
             "status"=>"required",
         ]);
         Subject::create($request->all());
-        return redirect()->route("admin.subjects.create")->with("info", "El subject se ha creado correctamente, visite su lista de Subjetcs.");
+        return redirect()->route("admin.subjects.create")->with("info", "El subject se ha creado correctamente, visite su lista de Subjects.");
     }
 
     /**

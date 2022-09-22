@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>Period</title>
+    <title>Section</title>
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -22,7 +22,8 @@
         <!-- Content page -->
         <div class="container-fluid">
             <div class="page-header">
-                <h1 class="text-titles"><i class="zmdi zmdi-timer zmdi-hc-fw"></i> Administration <small>Period</small>
+                <h1 class="text-titles"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i> Administration
+                    <small>Section</small>
                 </h1>
             </div>
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse voluptas reiciendis tempora
@@ -37,10 +38,10 @@
                     {{ session()->get('info') }}
                 </strong>
             </div>
-        @endif 
-        
-        {{-- Period create component --}}
-        @include('admin.periods.partials.period-create')
+        @endif
+
+        {{-- Section create component --}}
+        @include('admin.sections.partials.section-create')
 
 
     </section>
@@ -53,7 +54,7 @@
     <x-content-navigation-system.dialog-help />
 
     <!--====== Scripts -->
-        @include('admin.links.linksJs')
+    @include('admin.links.linksJs')
 
     @livewireScripts
 

@@ -16,8 +16,7 @@ class PeriodController extends Controller
      */
     public function index()
     {
-        $periods = Period::paginate(2);
-        return view("admin.periods.index", compact("periods"));
+        return view("admin.periods.index");
     }
 
     /**

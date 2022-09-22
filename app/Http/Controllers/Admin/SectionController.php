@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\Section;
 class SectionController extends Controller
 {
     /**
@@ -24,7 +24,7 @@ class SectionController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.sections.create");
     }
 
     /**
@@ -35,7 +35,8 @@ class SectionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Section::create($request->all());
+        return redirect()->route("admin.sections.create")->with("info", "La section se ha creado correctamente, visite su lista de sections.");
     }
 
     /**

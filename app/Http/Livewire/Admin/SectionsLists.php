@@ -2,13 +2,12 @@
 
 namespace App\Http\Livewire\Admin;
 
-use App\Models\Period;
+use App\Models\Section;
 use Livewire\Component;
-
 use Livewire\WithPagination;
 
-class PeriodLists extends Component
-{ 
+class SectionsLists extends Component
+{
     use WithPagination;
 
     protected $paginationTheme = 'bootstrap';
@@ -16,11 +15,10 @@ class PeriodLists extends Component
     public function updatingsearch(){
         $this->resetPage();
     }
-
     public function render()
     {
-        $periods = Period::paginate(20);
+        $sections = Section::paginate(20);
 
-        return view('livewire.admin.period-lists', compact("periods"));
+        return view('livewire.admin.sections-lists', compact("sections"));
     }
 }

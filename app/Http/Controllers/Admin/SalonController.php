@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Salon;
 use Illuminate\Http\Request;
 
 class SalonController extends Controller
@@ -24,7 +25,7 @@ class SalonController extends Controller
      */
     public function create()
     {
-        //
+        return view("admin.salon.create");
     }
 
     /**
@@ -35,7 +36,8 @@ class SalonController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Salon::create($request->all());
+        return redirect()->route("admin.salon.create")->with("info", "El salon se ha creado correctamente, visite su lista de salones.");
     }
 
     /**

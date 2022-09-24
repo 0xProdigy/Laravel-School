@@ -2,12 +2,11 @@
 <html lang="es">
 
 <head>
-    <title>Salon</title>
+    <title>Period</title>
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    @include('admin.links.linksCss')
-
+    @include('admin.links.LinksCSS')
 </head>
 
 <body>
@@ -29,8 +28,20 @@
                 voluptatum eius porro ipsa quae voluptates officiis sapiente sunt dolorem, velit quos a qui nobis sed,
                 dignissimos possimus!</p>
         </div>
-        {{-- Salon list livewire --}}
-        @livewire('admin.salon-lists')
+
+
+        {{-- Alert info --}}
+        @if (session()->has('info'))
+            <div class="alert alert-success">
+                <strong>
+                    {{ session()->get('info') }}
+                </strong>
+            </div>
+        @endif
+
+        {{-- Salon create component --}}
+        @include('admin.salon.partials.salon-create')
+        
 
     </section>
 
@@ -43,6 +54,7 @@
 
     <!--====== Scripts -->
     @include('admin.links.linksJs')
+
     @livewireScripts
 
 </body>

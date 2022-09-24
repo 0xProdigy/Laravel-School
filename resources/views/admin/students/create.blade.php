@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>Salon</title>
+    <title>Student</title>
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -23,14 +23,14 @@
         <!-- Content page -->
         <div class="container-fluid">
             <div class="page-header">
-                <h1 class="text-titles"><i class="zmdi zmdi-font zmdi-hc-fw"></i> Administration <small>Salon</small></h1>
+                <h1 class="text-titles"><i class="zmdi zmdi-face zmdi-hc-fw"></i> Users <small>Student</small></h1>
             </div>
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse voluptas reiciendis tempora
                 voluptatum eius porro ipsa quae voluptates officiis sapiente sunt dolorem, velit quos a qui nobis sed,
                 dignissimos possimus!</p>
         </div>
-        {{-- Salon list livewire --}}
-        @livewire('admin.salon-lists')
+        {{-- Partial create student --}}
+        @include('admin.students.partials.students-create')
 
     </section>
 
@@ -43,7 +43,6 @@
 
     <!--====== Scripts -->
     @include('admin.links.linksJs')
-    @livewireScripts
 
 </body>
 

@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\StudentUser;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class UserStudentController extends Controller
 {
@@ -35,7 +38,18 @@ class UserStudentController extends Controller
      */
     public function store(Request $request)
     {
-        return request();
+        User::create(
+            [
+                "name" => $request->name,
+                "email" => $request->email,
+                "password" => bcrypt($request->phone),
+                "id_identifier" => $request->id_identifier
+            ]
+        )->assignRole("student");
+
+        StudentUser::create($request->all());
+
+        return redirect()->route("admin.students.create")->with("info", "El usuario se ha creado correctamente, el estudiante debe cambiar su contraseña.");
     }
 
     /**

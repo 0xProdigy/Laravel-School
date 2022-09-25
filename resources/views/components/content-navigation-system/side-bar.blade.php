@@ -29,14 +29,14 @@
             <li>
 
                 @can('student.dashboard')
-                    <a href="{{route("student.dashboard")}}">
+                    <a href="{{ route('student.dashboard') }}">
                         <i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i> Dashboard
                     </a>
                 @endcan
 
 
                 @can('admin.dashboard')
-                    <a href="{{route("admin.home")}}">
+                    <a href="{{ route('admin.home') }}">
                         <i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i> Dashboard
                     </a>
                 @endcan
@@ -52,16 +52,19 @@
                     </a>
                     <ul class="list-unstyled full-box">
                         <li>
-                            <a href="{{route("admin.periods.index")}}"><i class="zmdi zmdi-timer zmdi-hc-fw"></i> Period</a>
+                            <a href="{{ route('admin.periods.index') }}"><i class="zmdi zmdi-timer zmdi-hc-fw"></i>
+                                Period</a>
                         </li>
                         <li>
-                            <a href="{{route("admin.subjects.index")}}"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Subject</a>
+                            <a href="{{ route('admin.subjects.index') }}"><i class="zmdi zmdi-book zmdi-hc-fw"></i>
+                                Subject</a>
                         </li>
                         <li>
-                            <a href="{{route("admin.sections.index")}}"><i class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i> Section</a>
+                            <a href="{{ route('admin.sections.index') }}"><i
+                                    class="zmdi zmdi-graduation-cap zmdi-hc-fw"></i> Section</a>
                         </li>
                         <li>
-                            <a href="{{route("admin.salon.index")}}"><i class="zmdi zmdi-font zmdi-hc-fw"></i> Salon</a>
+                            <a href="{{ route('admin.salon.index') }}"><i class="zmdi zmdi-font zmdi-hc-fw"></i> Salon</a>
                         </li>
                     </ul>
                 </li>
@@ -79,7 +82,7 @@
                             <a href="teacher.html"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i> Teacher</a>
                         </li>
                         <li>
-                            <a href="student.html"><i class="zmdi zmdi-face zmdi-hc-fw"></i> Student</a>
+                            <a href="{{route("admin.students.index")}}"><i class="zmdi zmdi-face zmdi-hc-fw"></i> Student</a>
                         </li>
                         <li>
                             <a href="representative.html"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i>

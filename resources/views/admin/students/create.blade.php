@@ -29,8 +29,18 @@
                 voluptatum eius porro ipsa quae voluptates officiis sapiente sunt dolorem, velit quos a qui nobis sed,
                 dignissimos possimus!</p>
         </div>
+
+        {{-- Alert info --}}
+        @if (session()->has('info'))
+            <div class="row alert alert-success">
+                <strong>
+                    {{ session()->get('info') }}
+                </strong>
+            </div>
+        @endif
+        
         {{-- Partial create student --}}
-        @include('admin.students.partials.students-create')
+        @include('admin.students.partials.student-create')
 
     </section>
 

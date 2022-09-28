@@ -3,22 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Period;
 use App\Models\SchoolYear;
 use Illuminate\Http\Request;
 
-
-class PeriodController extends Controller
+class SchoolController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware("can:admin.periods.index")->only("index");
-        $this->middleware("can:admin.periods.create")->only("create");
-        $this->middleware('can:admin.periods.show')->only("show");
-        $this->middleware('can:admin.periods.edit')->only("edit", "update", "destroy");
-        $this->middleware('can:admin.periods.store')->only("store");
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -26,20 +15,12 @@ class PeriodController extends Controller
      */
     public function index()
     {
-        return view("admin.periods.index");
+        return view("admin.school.index");
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
-        $years = SchoolYear::all();
-
-        return view("admin.periods.create", compact("years"));
-
+        return view("admin.school.create");
     }
 
     /**
@@ -50,10 +31,8 @@ class PeriodController extends Controller
      */
     public function store(Request $request)
     {
-        Period::create($request->all());
-
-        return redirect()->route("admin.periods.create")->with("info", "El periodo se ha creado correctamente, visite su lista de periodos.");
-
+        SchoolYear::create($request->all());
+        return redirect()->route("admin.schools.create")->with("info", "el anio escolar se ha creado correctamente, visite su lista de anios escolares.");
     }
 
     /**
@@ -99,5 +78,13 @@ class PeriodController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    /////
+
+    
+    public function data(){
+        return view("admin.school.data");
     }
 }

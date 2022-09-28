@@ -76,7 +76,7 @@
                     </a>
                     <ul class="list-unstyled full-box">
                         <li>
-                            <a href="admin.html"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Admin</a>
+                            <a href="{{route("admin.administrators.index")}}"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Admin</a>
                         </li>
                         <li>
                             <a href="teacher.html"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i> Teacher</a>
@@ -112,7 +112,7 @@
                     </a>
                     <ul class="list-unstyled full-box">
                         <li>
-                            <a href="school.html"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> School Data</a>
+                            <a href="{{route("admin.schools.index")}}"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> School Data</a>
                         </li>
                     </ul>
                 </li>

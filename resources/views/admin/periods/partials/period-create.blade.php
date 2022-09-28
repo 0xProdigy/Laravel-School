@@ -2,8 +2,8 @@
     <div class="row">
         <div class="col-xs-12">
             <ul class="nav nav-tabs" style="margin-bottom: 15px;">
-                <li><a href="{{route("admin.periods.create")}}">New</a></li>
-                <li><a href="{{route("admin.periods.index")}}">List</a></li>
+                <li><a href="{{ route('admin.periods.create') }}">New</a></li>
+                <li><a href="{{ route('admin.periods.index') }}">List</a></li>
             </ul>
             {!! Form::open(['route' => 'admin.periods.store', 'autocomplete' => 'off']) !!}
             @csrf
@@ -43,15 +43,13 @@
 
                                     {!! Form::date('endDate', null, ['class' => 'form-control', 'required']) !!}
                                 </div>
-
                                 <div class="form-group">
-                                    {!! Form::label('name', 'Year') !!}
-                                    {!! Form::text('year', \Carbon\Carbon::now()->year, [
-                                        'class' => 'form-control',
-                                        'placeholder' => 'Escribe el año del periodo',
-                                        'required',
-                                    ]) !!}
-
+                                    <label class="control-label">Year</label>
+                                    <select class="form-control">
+                                        @foreach ($years as $year)
+                                            <option value="{{ $year->year }}">{{ $year->year }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
 
                                 <p class="text-center">

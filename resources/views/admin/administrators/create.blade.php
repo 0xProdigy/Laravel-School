@@ -2,12 +2,11 @@
 <html lang="es">
 
 <head>
-    <title>School</title>
+    <title>Admin</title>
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    @include('admin.links.linksCss')
-
+    @include('admin.links.LinksCSS')
 </head>
 
 <body>
@@ -23,20 +22,24 @@
         <!-- Content page -->
         <div class="container-fluid">
             <div class="page-header">
-                <h1 class="text-titles"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> Settings <small>School Data</small>
-                </h1>
+                <h1 class="text-titles"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Users <small>Admin</small></h1>
             </div>
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse voluptas reiciendis tempora
                 voluptatum eius porro ipsa quae voluptates officiis sapiente sunt dolorem, velit quos a qui nobis sed,
                 dignissimos possimus!</p>
         </div>
-        
-        {{-- Component livewire to list all the years --}}
 
-        @livewire('admin.year-lists')
+        {{-- Alert info --}}
+        @if (session()->has('info'))
+            <div class="alert alert-success">
+                <strong>
+                    {{ session()->get('info') }}
+                </strong>
+            </div>
+        @endif
 
-
-
+        {{-- Salon create component --}}
+        @include('admin.administrators.partials.administrators-create')
     </section>
 
     <!-- Notifications area -->
@@ -48,8 +51,8 @@
 
     <!--====== Scripts -->
     @include('admin.links.linksJs')
-    @livewireScripts
 
+    @livewireScripts
 </body>
 
 </html>

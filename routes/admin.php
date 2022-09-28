@@ -7,6 +7,8 @@ use App\Http\Controllers\Admin\PeriodController;
 use App\Http\Controllers\Admin\SectionController;
 use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Admin\SalonController;
+use App\Http\Controllers\Admin\SchoolController;
+use App\Http\Controllers\Admin\UserAdminController;
 //Administration tools
 
 //Users tools
@@ -14,6 +16,7 @@ use App\Http\Controllers\Admin\UserStudentController;
 //Users tools
 
 Route::get("", [HomeController::class, "dashboard"])->middleware("can:admin.dashboard")->name("admin.home");
+Route::get("x", [HomeController::class, "x"])->middleware("can:admin.dashboard")->name("x");
 
 
 //Administration tools
@@ -27,8 +30,15 @@ Route::resource("salon", SalonController::class)->names("admin.salon");
 //Administration tools
 
 //Users tools
+Route::resource("administrators", UserAdminController::class)->names("admin.administrators");
 Route::resource("students", UserStudentController::class)->names("admin.students");
 
+Route::resource("schools", SchoolController::class)->names("admin.schools");
+
+ 
+
+// Method STORE/DESTROY/UPDATE 
+Route::get("/school/data", [SchoolController::class, "data"])->name("admin.schools.data"); 
 
 //Users tools
  

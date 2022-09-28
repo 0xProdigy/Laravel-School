@@ -1,6 +1,3 @@
-@php
-    $currentDate = \Carbon\Carbon::now();
-@endphp
 <html lang="en">
 
 <head>
@@ -11,14 +8,7 @@
 </head>
 
 <body>
-    {{-- {!! Form::open(['url' => 'foo/bar']) !!} --}}
-
-
-    {{\Carbon\Carbon::now()->year}}
-
-
-
-    {{-- {!! Form::close() !!} --}}
+     
 </body>
 
 </html>

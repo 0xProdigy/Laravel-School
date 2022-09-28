@@ -3,22 +3,12 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Period;
-use App\Models\SchoolYear;
+use App\Models\AdminUser;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-
-class PeriodController extends Controller
+class UserAdminController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware("can:admin.periods.index")->only("index");
-        $this->middleware("can:admin.periods.create")->only("create");
-        $this->middleware('can:admin.periods.show')->only("show");
-        $this->middleware('can:admin.periods.edit')->only("edit", "update", "destroy");
-        $this->middleware('can:admin.periods.store')->only("store");
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -26,7 +16,7 @@ class PeriodController extends Controller
      */
     public function index()
     {
-        return view("admin.periods.index");
+        return view("admin.administrators.index");
     }
 
     /**
@@ -36,10 +26,7 @@ class PeriodController extends Controller
      */
     public function create()
     {
-        $years = SchoolYear::all();
-
-        return view("admin.periods.create", compact("years"));
-
+        return view("admin.administrators.create");
     }
 
     /**
@@ -50,10 +37,17 @@ class PeriodController extends Controller
      */
     public function store(Request $request)
     {
-        Period::create($request->all());
+        User::create(
+            [
+                "name" => $request->name,
+                "email" => $request->email,
+                "password" => bcrypt($request->phone),
+                "id_identifier" => $request->id_identifier
+            ]
+        )->assignRole("student");
 
-        return redirect()->route("admin.periods.create")->with("info", "El periodo se ha creado correctamente, visite su lista de periodos.");
-
+        AdminUser::create($request->all());
+        return redirect()->route("admin.administrators.create")->with("info", "El admin se ha creado correctamente, visite su lista de admins.");
     }
 
     /**

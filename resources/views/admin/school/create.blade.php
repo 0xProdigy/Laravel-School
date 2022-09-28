@@ -30,13 +30,17 @@
                 voluptatum eius porro ipsa quae voluptates officiis sapiente sunt dolorem, velit quos a qui nobis sed,
                 dignissimos possimus!</p>
         </div>
-        
-        {{-- Component livewire to list all the years --}}
 
-        @livewire('admin.year-lists')
+        @if (session()->has('info'))
+            <div class="alert alert-success">
+                <strong>
+                    {{ session()->get('info') }}
+                </strong>
+            </div>
+        @endif
+        {{-- component to create new year --}}
 
-
-
+        @include('admin.school.partials.new-year')
     </section>
 
     <!-- Notifications area -->
@@ -48,7 +52,6 @@
 
     <!--====== Scripts -->
     @include('admin.links.linksJs')
-    @livewireScripts
 
 </body>
 

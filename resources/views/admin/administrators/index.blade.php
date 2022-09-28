@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="es">
 
 <head>
-    <title>Inicio</title>
+    <title>Admin</title>
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -13,21 +13,26 @@
     <!-- SideBar -->
     <x-content-navigation-system.side-bar />
 
+
     <!-- Content page-->
     <section class="full-box dashboard-contentPage">
         <!-- NavBar -->
         <x-content-navigation-system.top-navigation />
 
         <!-- Content page -->
-            
-            {{-- RegisterIcons --}}
-            <x-content-dashboard.register-icons />
+        <div class="container-fluid">
+            <div class="page-header">
+                <h1 class="text-titles"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Users <small>Admin</small></h1>
+            </div>
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse voluptas reiciendis tempora
+                voluptatum eius porro ipsa quae voluptates officiis sapiente sunt dolorem, velit quos a qui nobis sed,
+                dignissimos possimus!</p>
+        </div>
 
-            {{-- TimeLine --}}
-            <x-content-dashboard.time-line />
-
-        <!-- END Content page -->
         
+        {{-- admin list component --}}
+        @livewire('admin.user-admin-lists')
+
     </section>
 
     <!-- Notifications area -->
@@ -36,10 +41,11 @@
 
     <!-- Dialog help -->
     <x-content-navigation-system.dialog-help />
-    
-    <!--====== Scripts -->
-        @include('admin.links.linksJs')
 
+    <!--====== Scripts -->
+    @include('admin.links.linksJs')
+
+    @livewireScripts
 </body>
 
 </html>

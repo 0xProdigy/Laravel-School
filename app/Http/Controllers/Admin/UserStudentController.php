@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\StudentUser;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
 class UserStudentController extends Controller
@@ -37,7 +38,7 @@ class UserStudentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
+    { 
         User::create(
             [
                 "name" => $request->name,

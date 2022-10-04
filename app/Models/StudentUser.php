@@ -26,5 +26,6 @@ class StudentUser extends Model
         "representativerelation",
 
         "id_identifier",
+
     ];
 }

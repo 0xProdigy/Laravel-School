@@ -8,7 +8,7 @@
 </head>
 
 <body>
-     
+     {{$assignments}}
 </body>
 
 </html>

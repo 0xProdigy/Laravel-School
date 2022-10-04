@@ -39,6 +39,5 @@ class RolSeeder extends Seeder
 
 
         Permission::create(['name' => 'student.dashboard', "description"=> "Permission to open dashboard/user"])->syncRoles($student);  
-
     }
 }

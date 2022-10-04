@@ -13,6 +13,6 @@ class HomeController extends Controller
     } 
     
     public function x(){
-        return view("admin.x", compact("years"));
+        
     }
 }

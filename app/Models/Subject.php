@@ -9,8 +9,10 @@ class Subject extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "code",
+        "trayecto",
         "name",
         "status",
+        "startDate",
+        "endDate",
     ];
 }

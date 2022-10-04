@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>Subject</title>
+    <title>Student</title>
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -22,16 +22,16 @@
         <!-- Content page -->
         <div class="container-fluid">
             <div class="page-header">
-                <h1 class="text-titles"><i class="zmdi zmdi-book zmdi-hc-fw"></i> Administration <small>Subject</small>
-                </h1>
+                <h1 class="text-titles"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Users <small>Admin</small></h1>
             </div>
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse voluptas reiciendis tempora
                 voluptatum eius porro ipsa quae voluptates officiis sapiente sunt dolorem, velit quos a qui nobis sed,
                 dignissimos possimus!</p>
         </div>
 
-        {{-- List subjects --}}
-        @livewire('admin.subjects-lists')
+        
+        {{-- admin list component --}}
+        @livewire('student.assignment-list')
 
     </section>
 
@@ -43,9 +43,9 @@
     <x-content-navigation-system.dialog-help />
 
     <!--====== Scripts -->
-        @include('admin.links.linksJs')
-        @livewireScripts
+    @include('admin.links.linksJs')
 
+    @livewireScripts
 </body>
 
 </html>

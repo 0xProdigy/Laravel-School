@@ -76,13 +76,15 @@
                     </a>
                     <ul class="list-unstyled full-box">
                         <li>
-                            <a href="{{route("admin.administrators.index")}}"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Admin</a>
+                            <a href="{{ route('admin.administrators.index') }}"><i class="zmdi zmdi-account zmdi-hc-fw"></i>
+                                Admin</a>
                         </li>
                         <li>
                             <a href="teacher.html"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i> Teacher</a>
                         </li>
                         <li>
-                            <a href="{{route("admin.students.index")}}"><i class="zmdi zmdi-face zmdi-hc-fw"></i> Student</a>
+                            <a href="{{ route('admin.students.index') }}"><i class="zmdi zmdi-face zmdi-hc-fw"></i>
+                                Student</a>
                         </li>
                         <li>
                             <a href="representative.html"><i class="zmdi zmdi-male-female zmdi-hc-fw"></i>
@@ -112,7 +114,8 @@
                     </a>
                     <ul class="list-unstyled full-box">
                         <li>
-                            <a href="{{route("admin.schools.index")}}"><i class="zmdi zmdi-balance zmdi-hc-fw"></i> School Data</a>
+                            <a href="{{ route('admin.schools.index') }}"><i class="zmdi zmdi-balance zmdi-hc-fw"></i>
+                                School Data</a>
                         </li>
                     </ul>
                 </li>
@@ -127,13 +130,12 @@
 
                     <ul class="list-unstyled full-box">
                         <li>
-                            <a href="#!"><i class="zmdi zmdi-attachment-alt"></i> assignment list</a>
+                            <a href="{{ route('student.assignments.index') }} "><i class="zmdi zmdi-attachment-alt"></i>
+                                assignment list</a>
                         </li>
                     </ul>
                 </li>
             @endcan
-
-
         </ul>
     </div>
 </section>

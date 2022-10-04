@@ -23,9 +23,12 @@ class SubjectFactory extends Factory
             $status = "off";
         }
         return [
-            "code" => Str::random(10),
+            "trayecto" => Str::random(10),
+            "id_identifier" => Str::random(10),
             "name" => fake()->name(),
             "status" => $status,
+            "startDate" => fake()->date(),
+            "endDate" => fake()->date() ,
         ];
     }
 }

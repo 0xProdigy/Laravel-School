@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\StudentUser;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,7 +12,12 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view("users.index");
+        $user = StudentUser::where("id_identifier", Auth::user()->id_identifier)->first();
+        if ($user->section == null) {
+            return "unaffiliated";
+        }else{
+            return view("student.dashboard");
+        }
     }
 
     public function LoginView()
@@ -23,7 +29,6 @@ class LoginController extends Controller
     {
         if (Auth::attempt($creds->only(['email', 'password']))) {
             request()->session()->regenerate();
-
             return $this->detectUser();
         } else {
             return redirect("login");
@@ -36,8 +41,8 @@ class LoginController extends Controller
 
         if ($user->hasRole("admin")) {
             return redirect()->route("admin.home");
-        } else {
-            return redirect()->route("student.dashboard");
+        } else if($user->hasRole("student")){
+            return redirect()->route("student.home");
         }
     }
 

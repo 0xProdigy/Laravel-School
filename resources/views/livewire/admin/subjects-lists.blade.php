@@ -11,9 +11,11 @@
                     <table class="table table-hover text-center">
                         <thead>
                             <tr>
-                                <th class="text-center">Code</th>
+                                <th class="text-center">Codigo del Trayecto</th>
                                 <th class="text-center">Name</th>
                                 <th class="text-center">Status</th>
+                                <th class="text-center">Start Date</th>
+                                <th class="text-center">End Date</th>
                                 <th class="text-center">Update</th>
                                 <th class="text-center">Delete</th>
                             </tr>
@@ -21,9 +23,11 @@
                         <tbody>
                             @foreach ($subjects as $subject)
                                 <tr>
-                                    <td>{{ $subject->code }}</td>
+                                    <td>{{ $subject->trayecto }}</td>
                                     <td>{{ $subject->name }}</td>
                                     <td>{{ $subject->status }}</td>
+                                    <td>{{ $subject->startDate }}</td>
+                                    <td>{{ $subject->endDate }}</td>
                                     <td><a href="#!" class="btn btn-success btn-raised btn-xs"><i
                                                 class="zmdi zmdi-refresh"></i></a></td>
                                     <td><a href="#!" class="btn btn-danger btn-raised btn-xs"><i

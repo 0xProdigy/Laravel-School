@@ -339,6 +339,15 @@ body, html{
 	top: 0;
 	left: 0;
 }
+.tile-title2{
+	height: 40px;
+	line-height: 40px;
+	font-size: 20px;
+	background-color: rgba(25, 12, 204, 0.651);
+	color: #fff;
+	top: 0;
+	left: 0;
+}
 .tile-icon,
 .tile-number{
 	bottom: 0;

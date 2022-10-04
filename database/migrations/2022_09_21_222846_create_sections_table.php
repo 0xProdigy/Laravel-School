@@ -20,6 +20,8 @@ return new class extends Migration
             $table->string("status");
             $table->string("year");
 
+            $table->string("id_identifier");
+
             $table->timestamps();
         });
     }

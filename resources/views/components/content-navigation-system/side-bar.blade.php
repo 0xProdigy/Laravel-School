@@ -29,7 +29,7 @@
             <li>
 
                 @can('student.dashboard')
-                    <a href="{{ route('student.dashboard') }}">
+                    <a href="{{ route('student.home') }}">
                         <i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i> Dashboard
                     </a>
                 @endcan

@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string("phone");
             $table->string("birthday");
             $table->string("gender");
-            $table->string("section");
+            $table->string("trayecto");
             $table->string("dnirepresentative");
             $table->string("representativerelation");
 

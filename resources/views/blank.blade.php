@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>Student</title>
+    <title>Blank Page</title>
     <meta charset="UTF-8">
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
@@ -22,16 +22,13 @@
         <!-- Content page -->
         <div class="container-fluid">
             <div class="page-header">
-                <h1 class="text-titles"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Assignment <small>Exams</small></h1>
+                <h1 class="text-titles"><i class="zmdi zmdi-account zmdi-hc-fw"></i> Example <small>Page Blank</small></h1>
             </div>
             <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse voluptas reiciendis tempora
                 voluptatum eius porro ipsa quae voluptates officiis sapiente sunt dolorem, velit quos a qui nobis sed,
                 dignissimos possimus!</p>
         </div>
 
-        {{-- Assignment Exams --}}
-
-        @livewire('student.assignment-exams')
 
     </section>
 

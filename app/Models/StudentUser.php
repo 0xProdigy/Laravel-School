@@ -21,7 +21,8 @@ class StudentUser extends Model
         // "namejpg",
         // "filejpg",
         
-        "section",
+        "trayecto",
+        
         "dnirepresentative",
         "representativerelation",
 

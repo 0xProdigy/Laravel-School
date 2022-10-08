@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\AssignmentExam;
 use App\Models\Section;
 use App\Models\Subject;
 
@@ -25,8 +26,11 @@ class SectionSeeder extends Seeder
 
             $section = Section::factory()->create();
 
+            $assignment = AssignmentExam::factory()->create();
+
             Subject::factory(4)->create([
-                "trayecto" => $section->name
+                "trayecto" => $section->name,
+                "id_identifier_assignment" => $assignment->id
             ]);
             $this->create_users($section);
         }
@@ -40,7 +44,7 @@ class SectionSeeder extends Seeder
 
         for ($i = 0; $i < 4; $i++) {
             $student = StudentUser::factory()->create([
-                "section" => $section->name
+                "trayecto" => $section->name
             ]);
 
             if ($faker->numberBetween($min = 1, $max = 2) == 1) {

@@ -26,7 +26,7 @@ class AssignmentList extends Component
     {
         $user = StudentUser::where("id_identifier", Auth::user()->id_identifier)->first();
         
-        $section = Section::where("name", $user->section)->first();
+        $section = Section::where("name", $user->trayecto)->first();
         if ($section == null) {
             $assignments = null;
         }else {

@@ -33,7 +33,7 @@ class StudentUserFactory extends Factory
             "phone" => fake()->phoneNumber(),
             "birthday" => fake()->date(),
             "gender" => $role,
-            "section" => Section::all()->random()->name,
+            "trayecto" => Section::all()->random()->name,
             "dnirepresentative" => fake()->uuid(),
             "representativerelation" => "asdasdasdasdasdasdas",
             "id_identifier" => Str::random(10),

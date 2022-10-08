@@ -14,5 +14,12 @@ class Subject extends Model
         "status",
         "startDate",
         "endDate",
+        "id_identifier",
+        "id_identifier_assignment"
     ];
+
+    public function id_examen()
+    {
+        return $this->hasOne(AssignmentExam::class, "id");
+    }
 }

@@ -14,5 +14,6 @@ class AdminUser extends Model
         "address",
         "email",
         "phone",
+        "id_identifier"
     ];
 }

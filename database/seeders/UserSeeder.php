@@ -2,7 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\AssignmentExam;
+use App\Models\Section;
 use App\Models\StudentUser;
+use App\Models\Subject;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -17,42 +20,15 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        $faker = \Faker\Factory::create();
-        $admin_identifier = Str::random(10);
-        User::create([
-            "name" => "admin",
-            "email" => "admin@gmail.com",
-            "password" => "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi", //password
-            'email_verified_at' => now(),
-            "id_identifier" => $admin_identifier
-        ])->assignRole("admin");
-
-        $student = StudentUser::factory()->create();
-
-        User::create([
+        $user = StudentUser::factory()->create([
             "name" => "student",
             "email" => "student@gmail.com",
-            "password" => "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi", //password
-            'email_verified_at' => now(),
-            "id_identifier" => $student->id_identifier
+            "trayecto" => Section::all()->random()->name,
+        ]);
+        User::factory()->create([
+            "name" => $user->name,
+            "email" => $user->email,
+            "id_identifier" => $user->id_identifier,
         ])->assignRole("student");
-
-        for ($i = 3; $i < 99; $i++) {
-
-            $student = StudentUser::factory()->create();
-
-            if ($faker->numberBetween($min = 1, $max = 2) == 1) {
-                $role = "admin";
-            } else {
-                $role = "student";
-            }
-            User::create([
-                "name" => $faker->name(),
-                "email" => $faker->email(),
-                "password" => "$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi", //password
-                'email_verified_at' => now(),
-                "id_identifier" => $student->id_identifier
-            ])->assignRole($role);
-        }
     }
 }

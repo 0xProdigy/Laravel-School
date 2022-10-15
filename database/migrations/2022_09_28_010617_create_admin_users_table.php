@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string("address");
             $table->string("email");
             $table->string("phone");
+            $table->string("id_identifier");
                 
             $table->timestamps();
         });

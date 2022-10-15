@@ -20,10 +20,10 @@ class StudentUserFactory extends Factory
     public function definition()
     {
         if (fake()->numberBetween($min = 1, $max = 2) == 1) {
-            $role = "male";
+            $gender = "male";
             
         } else {
-            $role = "female";
+            $gender = "female";
         }
         return [
             "name" => fake()->name(),
@@ -32,7 +32,7 @@ class StudentUserFactory extends Factory
             "email" => fake()->email(),
             "phone" => fake()->phoneNumber(),
             "birthday" => fake()->date(),
-            "gender" => $role,
+            "gender" => $gender,
             "trayecto" => Section::all()->random()->name,
             "dnirepresentative" => fake()->uuid(),
             "representativerelation" => "asdasdasdasdasdasdas",

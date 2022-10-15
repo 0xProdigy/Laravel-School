@@ -17,7 +17,6 @@ use Illuminate\Support\Str;
                             <fieldset>Student Data</fieldset>
 
                             <input type="text" name="id_identifier" value="{{ Str::random(10) }}" hidden>
-                            <input type="text" name="status" value="unaffiliated" hidden>
 
                             <div class="form-group label-floating">
                                 <label class="control-label">Name</label>
@@ -62,6 +61,7 @@ use Illuminate\Support\Str;
                                 </div>
                             </div>
                              --}} 
+
                             <br><br>
                             <fieldset>Representative Data</fieldset>
                             <div class="form-group label-floating">

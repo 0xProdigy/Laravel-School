@@ -19,6 +19,7 @@ class RolSeeder extends Seeder
     {
         $admin = Role::create(['name' => 'admin']); 
         $student = Role::create(['name' => 'student']);  
+        $teacher = Role::create(['name' => 'teacher']);  
         
         Permission::create(['name' => 'admin.dashboard', "description"=> "Permiso para abrir el dashboard"])->syncRoles($admin); 
         

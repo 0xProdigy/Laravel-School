@@ -23,7 +23,8 @@
                             @foreach ($assignments as $assignment)
                                 <tr>
                                     <td>{{ $assignment->name }}</td>
-                                    <td>{{ $assignment->status }}</td>
+                                    <td><x-users.assignment-list-status status="{{$assignment->status}}"/></td>
+                                    {{-- <td>{{ $assignment->status }}</td> --}}
                                     <td>{{ $assignment->startDate }}</td>
                                     <td>{{ $assignment->endDate }}</td>
                                     <td><a href="{{ route('student.assignments.show', $assignment) }}" class="btn btn-success btn-raised btn-xs"><i

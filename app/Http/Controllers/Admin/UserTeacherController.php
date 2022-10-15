@@ -1,11 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\Student;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Subject;
+use App\Models\TeacherUser;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class Assignment extends Controller
+class UserTeacherController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,39 +17,34 @@ class Assignment extends Controller
      */
     public function index()
     {
-        return view("student.assignment.index");
+        return view("admin.teachers.index");
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
-        //
+        return view("admin.teachers.create");
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
-        //
+        User::create(
+            [
+                "name" => $request->name,
+                "email" => $request->email,
+                "password" => bcrypt($request->phone),
+                "id_identifier" => $request->id_identifier
+            ]
+        )->assignRole("teacher");
+
+        TeacherUser::create($request->all());
+
+        return redirect()->route("admin.teachers.create")->with("info", "El usuario se ha creado correctamente, el profesor debe cambiar su contraseña.");
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function show($id)
     {
-        return view("student.assignment.show");
     }
 
     /**
@@ -55,9 +53,10 @@ class Assignment extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(TeacherUser $teacher)
     {
-        //
+        $subjects = Subject::where("id_identifier_teacher", $teacher->id)->paginate(10);
+        return view("admin.teachers.edit", compact("subjects", "teacher"));
     }
 
     /**

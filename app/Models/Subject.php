@@ -15,7 +15,8 @@ class Subject extends Model
         "startDate",
         "endDate",
         "id_identifier",
-        "id_identifier_assignment"
+        "id_identifier_assignment",
+        "id_identifier_teacher"
     ];
 
     public function id_examen()

@@ -27,7 +27,6 @@ class SectionSeeder extends Seeder
             $section = Section::factory()->create();
 
             $assignment = AssignmentExam::factory()->create();
-
             Subject::factory(4)->create([
                 "trayecto" => $section->name,
                 "id_identifier_assignment" => $assignment->id
@@ -82,5 +81,5 @@ class SectionSeeder extends Seeder
             'email_verified_at' => now(),
             "id_identifier" => $student->id_identifier
         ])->assignRole("student");
-    }
+    } 
 }

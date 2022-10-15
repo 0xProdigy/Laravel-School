@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\SubjectController;
 use App\Http\Controllers\Admin\SalonController;
 use App\Http\Controllers\Admin\SchoolController;
 use App\Http\Controllers\Admin\UserAdminController;
+use App\Http\Controllers\Admin\UserTeacherController;
 //Administration tools
 
 //Users tools
@@ -32,6 +33,7 @@ Route::resource("salon", SalonController::class)->names("admin.salon");
 //Users tools
 Route::resource("administrators", UserAdminController::class)->names("admin.administrators");
 Route::resource("students", UserStudentController::class)->names("admin.students");
+Route::resource("teachers", UserTeacherController::class)->names("admin.teachers");
 
 Route::resource("schools", SchoolController::class)->names("admin.schools");
 

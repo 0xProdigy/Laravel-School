@@ -8,7 +8,7 @@
 </head>
 
 <body>
-     {{$assignments}}
+    {{ $subjects->links('vendor.pagination.custom') }}
 </body>
 
 </html>

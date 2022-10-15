@@ -80,7 +80,8 @@
                                 Admin</a>
                         </li>
                         <li>
-                            <a href="teacher.html"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i> Teacher</a>
+                            <a href="{{ route('admin.teachers.index') }}"><i class="zmdi zmdi-male-alt zmdi-hc-fw"></i>
+                                Teacher</a>
                         </li>
                         <li>
                             <a href="{{ route('admin.students.index') }}"><i class="zmdi zmdi-face zmdi-hc-fw"></i>

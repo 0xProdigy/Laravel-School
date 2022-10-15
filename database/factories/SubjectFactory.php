@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\AssignmentExam;
+use App\Models\TeacherUser;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -31,6 +32,7 @@ class SubjectFactory extends Factory
             "startDate" => fake()->date(),
             "endDate" => fake()->date(),
             "id_identifier_assignment" => AssignmentExam::all()->random()->id,
+            "id_identifier_teacher" => TeacherUser::all()->random()->id,
         ];
     }
 }

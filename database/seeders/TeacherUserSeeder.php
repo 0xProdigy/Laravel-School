@@ -1,6 +1,8 @@
 <?php
 
 namespace Database\Seeders;
+use App\Models\Section;
+use App\Models\User;
 
 use App\Models\TeacherUser;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -15,6 +17,15 @@ class TeacherUserSeeder extends Seeder
      */
     public function run()
     {
+        $user = TeacherUser::factory()->create([
+            "name" => "teacher",
+            "email" => "teacher@gmail.com",
+        ]);
+        User::factory()->create([
+            "name" => $user->name,
+            "email" => $user->email,
+            "id_identifier" => $user->id_identifier,
+        ])->assignRole("teacher");
         TeacherUser::factory(70)->create();
     }
 }

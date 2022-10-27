@@ -26,11 +26,17 @@ class SectionSeeder extends Seeder
 
             $section = Section::factory()->create();
 
-            $assignment = AssignmentExam::factory()->create();
+            // $assignment = AssignmentExam::factory()->create();
+            // Subject::factory(4)->create([
+            //     "trayecto" => $section->name,
+            //     "id_identifier_assignment" => $assignment->id
+            // ]);
+
+            
             Subject::factory(4)->create([
-                "trayecto" => $section->name,
-                "id_identifier_assignment" => $assignment->id
+                "trayecto" => $section->id,
             ]);
+
             $this->create_users($section);
         }
     }
@@ -46,7 +52,7 @@ class SectionSeeder extends Seeder
             } else {
                 $role = "student";
                 $user = StudentUser::factory()->create([
-                    "trayecto" => $section->name,
+                    "trayecto" => $section->id,
                 ]);
             }
             User::factory()->create([

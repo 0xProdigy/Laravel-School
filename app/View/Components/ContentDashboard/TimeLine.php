@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\content-dashboard;
+namespace App\View\Components\ContentDashboard;
 
 use Illuminate\View\Component;
 
-class RegisterIcons extends Component
+class TimeLine extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class RegisterIcons extends Component
      */
     public function render()
     {
-        return view('components..content-dashboard.register-icons');
+        return view('components..content-dashboard.time-line');
     }
 }

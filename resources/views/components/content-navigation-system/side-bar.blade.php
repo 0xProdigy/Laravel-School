@@ -34,9 +34,14 @@
                     </a>
                 @endcan
 
-
                 @can('admin.dashboard')
                     <a href="{{ route('admin.home') }}">
+                        <i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i> Dashboard
+                    </a>
+                @endcan
+
+                @can('teacher.dashboard')
+                    <a href="{{ route('teacher.home') }}">
                         <i class="zmdi zmdi-view-dashboard zmdi-hc-fw"></i> Dashboard
                     </a>
                 @endcan
@@ -133,6 +138,21 @@
                         <li>
                             <a href="{{ route('student.assignments.index') }} "><i class="zmdi zmdi-attachment-alt"></i>
                                 assignment list</a>
+                        </li>
+                    </ul>
+                </li>
+            @endcan
+
+            @can('teacher.dashboard')
+                <li>
+                    <a href="#!" class="btn-sideBar-SubMenu">
+                        <i class="zmdi zmdi-blur"></i> My Lists <i class="zmdi zmdi-caret-down pull-right"></i>
+                    </a>
+
+                    <ul class="list-unstyled full-box">
+                        <li>
+                            <a href="{{ route('teacher.subjects.index') }} "><i class="zmdi zmdi-attachment-alt"></i>
+                                subject list</a>
                         </li>
                     </ul>
                 </li>

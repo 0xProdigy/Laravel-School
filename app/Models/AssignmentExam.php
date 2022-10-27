@@ -14,10 +14,16 @@ class AssignmentExam extends Model
         "timeEnd",
         "date",
         "calification",
+        "id_identifier_subject",
     ];
+
+    // public function id_subject()
+    // {
+    //     return $this->belongsTo(Subject::class, "id_identifier_assignment");
+    // }
 
     public function id_subject()
     {
-        return $this->belongsTo(Subject::class, "id_identifier_assignment");
+        return $this->hasOne(AssignmentExam::class, "id");
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Subject;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 /**
@@ -22,6 +23,7 @@ class AssignmentExamFactory extends Factory
             "timeEnd" => now(),
             "date" => now() ,
             "calification" => fake()->numberBetween($min = 0, $max = 20),
+            "id_identifier_subject" => Subject::all()->random()->id,
         ];
     }
 }

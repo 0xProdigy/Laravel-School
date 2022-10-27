@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Student;
 
+use App\Models\AssignmentExam;
 use App\Models\StudentUser;
 use App\Models\Subject;
 
@@ -22,10 +23,9 @@ class AssignmentExams extends Component
 
     public function render()
     {
-        $user = StudentUser::where("id_identifier", Auth::user()->id_identifier)->first();
-        
-        $subjects = Subject::where("trayecto", $user->trayecto)->with("id_examen")->paginate(5);  
-
-        return view('livewire..student.assignment-exams', compact("subjects"));
+        $trayecto = StudentUser::where("id_identifier", Auth::user()->id_identifier)->value("trayecto");
+        $subject = Subject::where("trayecto", $trayecto)->value("id");
+        $exams = AssignmentExam::where("id_identifier_subject", $subject)->paginate(5);
+        return view('livewire..student.assignment-exams', compact("exams"));
     }
 }

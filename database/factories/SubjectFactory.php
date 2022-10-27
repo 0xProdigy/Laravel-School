@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 
-use App\Models\AssignmentExam;
+use App\Models\Section;
 use App\Models\TeacherUser;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
@@ -25,13 +25,13 @@ class SubjectFactory extends Factory
             $status = "off";
         }
         return [
-            "trayecto" => Str::random(10),
+            "trayecto" => Section::all()->random()->id,
             "id_identifier" => Str::random(10),
             "name" => fake()->name(),
             "status" => $status,
             "startDate" => fake()->date(),
             "endDate" => fake()->date(),
-            "id_identifier_assignment" => AssignmentExam::all()->random()->id,
+            // "id_identifier_assignment" => AssignmentExam::all()->random()->id,
             "id_identifier_teacher" => TeacherUser::all()->random()->id,
         ];
     }

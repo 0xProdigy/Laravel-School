@@ -24,7 +24,7 @@ return new class extends Migration
 
             $table->string("id_identifier");
 
-            $table->foreignId("id_identifier_assignment")->nullable()->constrained("assignment_exams")->cascadeOnUpdate()->nullOnDelete(); 
+            // $table->foreignId("id_identifier_assignment")->nullable()->constrained("assignment_exams")->cascadeOnUpdate()->nullOnDelete(); 
             
             $table->string("id_identifier_teacher");
 

@@ -25,13 +25,14 @@ class AssignmentList extends Component
     public function render()
     {
         $user = StudentUser::where("id_identifier", Auth::user()->id_identifier)->first();
-        
-        $section = Section::where("name", $user->trayecto)->first();
+
+        $section = Section::where("id", $user->trayecto)->first();
+
         if ($section == null) {
             $assignments = null;
-        }else {
-            $assignments = Subject::where("trayecto", $section->name)->paginate(5);
-        } 
+        } else {
+            $assignments = Subject::where("trayecto", $section->id)->paginate(5);
+        }
         return view('livewire..student.assignment-list', compact("assignments"));
     }
 }

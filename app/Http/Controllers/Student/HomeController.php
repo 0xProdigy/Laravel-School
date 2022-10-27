@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Student;
 
 use App\Http\Controllers\Controller;
-use App\Models\AssignmentExam;
+use App\Models\Section;
 use App\Models\StudentUser;
 use App\Models\Subject;
 use Illuminate\Http\Request;
@@ -17,11 +17,10 @@ class HomeController extends Controller
     }
 
     public function x()
-    { 
+    {
         $user = StudentUser::where("id_identifier", Auth::user()->id_identifier)->first();
-        // $subjects = Subject::where("trayecto", $user->trayecto)->with("id_examen")->paginate(5); 
-        $subjects = Subject::where("trayecto", $user->trayecto)->with("id_examen")->first();
-        return $subjects;
-        return view("student.x", compact("subjects"));
+
+        $section = Section::where("id", $user->trayecto)->first();
+        return Subject::where("trayecto", $section->id)->get();
     }
 }

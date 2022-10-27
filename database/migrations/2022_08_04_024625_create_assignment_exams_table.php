@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string("timeEnd");
             $table->string("date");
             $table->string("calification");
+            $table->foreignId("id_identifier_subject")->nullable()->constrained("subjects")->cascadeOnUpdate()->nullOnDelete(); 
 
             $table->timestamps();
         });
